@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <img src="{{ pathForImage(lastImage) }}" style="width:100%;border:1px solid red" [hidden]="lastImage === null || cropImageFile !== null">
+  <img src="{{ cropImageFile }}" style="width:100%;border:1px solid blue" [hidden]="cropImageFile === null">
+  <h3 [hidden]="lastImage !== null"> Selecione uma imagem</h3>
+  <button block ion-button (click)="cropImage()" [hidden]="lastImage === null">
+      <ion-icon name="crop"> Crop</ion-icon>
+  </button>
+</ion-content>
+ 
+<ion-footer>
+  <ion-toolbar color="primary">
+
+    <ion-row>
+      <ion-col col-6>
+        <button color="dark" block ion-button (click)="presentActioncSheet()">
+          <ion-icon name="camera"> Foto</ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-6>
+        <button color="dark" block ion-button (click)="uploadImage()">
+          <ion-icon name="cloud-upload"> Upload</ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </ion-toolbar>
+</ion-footer>
