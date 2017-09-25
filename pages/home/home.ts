@@ -126,7 +126,7 @@ export class HomePage {
 
   public uploadImage() {
     // Destination URL
-    var url = "http://hojesites.com.br/ionic_test/";
+    var url = "http://ionic_test/";
 
     // File for Upload
     var targetPath = null;
